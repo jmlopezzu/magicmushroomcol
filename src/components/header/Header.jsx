@@ -14,7 +14,7 @@ const Header = () => {
         <div>
             <header className="bg-black relative h-14 px-8">
                 <div className="h-10 w-full flex items-center justify-center">
-                    <p className="text-white">🍄 Envío gratuito en Manizales para ordenes sobre $ 200 COP 🍄 </p>
+                    <p className="text-white text-sm">🍄 Envío gratuito en Manizales para ordenes sobre $ 200 COP 🍄 </p>
                 </div>
 
                 <div className="absolute -bottom-1 left-0 w-full h-10">

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Instagram, Phone, Mail, MapPin } from "lucide-react";
 import MagicmushroomLogo from '@/assets/alice.png';
+import MagicmushroomLogoi from '@/assets/Magicmushroom-logo.png';
 import testimonio1 from '@/assets/preg.jpeg';
 import testimonio2 from '@/assets/preg.jpeg';
 import testimonio3 from '@/assets/preg.jpeg';
@@ -46,12 +47,12 @@ export default function MagicmushroomPage() {
   ];
 
   const icons = [
-    { id: 1, imgSrc: 'busq.jpeg', label: 'Naturaleza' },
-    { id: 2, imgSrc: 'cacao.jpeg', label: 'Bienestar' },
-    { id: 3, imgSrc: 'fung.jpeg', label: 'Salud' },
-    { id: 4, imgSrc: 'granj.jpeg', label: 'Meditación' },
-    { id: 5, imgSrc: 'magicul.jpeg', label: 'Yoga' },
-    { id: 6, imgSrc: 'preg.jpeg', label: 'Terapias' },
+    { id: 1, imgSrc: 'busq.jpeg', label: 'Ciencia' },
+    { id: 2, imgSrc: 'cacao.jpeg', label: 'Cacao' },
+    { id: 3, imgSrc: 'fung.jpeg', label: 'Psilocibes' },
+    { id: 4, imgSrc: 'granj.jpeg', label: 'Cultivo' },
+    { id: 5, imgSrc: 'magicul.jpeg', label: 'Medicina' },
+    { id: 6, imgSrc: 'preg.jpeg', label: '¿Preguntas?' },
   ];
 
   return (
@@ -79,7 +80,7 @@ export default function MagicmushroomPage() {
                 </h1>
 
                 <p className="text-xl mb-8 text-[var(--tan)]">
-                  Un espacio desde la naturaleza, lo carácter y lo constructo se encuentran para transformar tu bienestar.
+                Un espacio donde la naturaleza, la ciencia y la conciencia se encuentran para transformar tu bienestar.
                 </p>
 
                 <Button className="bg-transparent border-2 border-[var(--brown)] text-[var(--tan)] hover:bg-[var(--brown)] hover:text-white px-8 py-3">
@@ -110,7 +111,7 @@ export default function MagicmushroomPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[var(--tan)]">
         <div className="container mx-auto px-4 flex justify-center flex-wrap gap-8">
           {icons.map((item) => (
             <div key={item.id} className="flex flex-col items-center group">
@@ -131,8 +132,7 @@ export default function MagicmushroomPage() {
       
       <Shop />
 
-      {/* Sección Hero
-      <section className="relative py-32 bg-[url('nature-background.jpg')] bg-cover bg-center">
+      {/* <section className="relative py-32 bg-[url('nature-background.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-[var(--tan)]/80"></div>
         <div className="container mx-auto px-4 relative text-center">
           <h1 className="text-5xl font-bold mb-6 text-[var(--brown-2)]">
@@ -145,7 +145,7 @@ export default function MagicmushroomPage() {
             Explora Nuestras Experiencias
           </Button>
         </div>
-      </section>
+      </section>  */}
       <section className="py-20 bg-[var(--light-tan)]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-[var(--brown)]">
@@ -161,9 +161,9 @@ export default function MagicmushroomPage() {
             ))}
           </div>
         </div>
-      </section> */}
-      {/* Sección Healthy
-      <section className="py-20 bg-[var(--light-tan)]">
+      </section> 
+
+      {/* <section className="py-20 bg-[var(--light-tan)]">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-[var(--green)]">
             Bienestar Integral
@@ -180,14 +180,14 @@ export default function MagicmushroomPage() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>  */}
 
       {/* Footer */}
       <footer className="bg-black text-white py-12 mt-auto">
   <div className="container mx-auto px-4 grid md:grid-cols-3 gap-8">
     {/* Logo y descripción */}
     <div>
-      <img src={MagicmushroomLogo} alt="Logo" className="h-20 mb-4" />
+      <img src={MagicmushroomLogoi} alt="Logo" className="h-40 mb-4" />
       <p className="text-gray-400">Guiados por profesionales de la salud mental</p>
     </div>
 
@@ -228,6 +228,9 @@ export default function MagicmushroomPage() {
   {/* Copyright */}
   <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
     <p>© 2025 Magic Mushroom Col. Todos los derechos reservados.</p>
+    <br />
+    <p>“Que este espacio sea una invitación a explorar, sanar y expandir tu conciencia. La magia ya está en ti, solo necesitas recordarla.”
+    – Magic mushroom</p>
   </div>
 </footer>
 

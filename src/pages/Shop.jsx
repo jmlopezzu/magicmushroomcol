@@ -11,23 +11,23 @@ const Shop = () => {
         {
             id: 1,
             name: "Melena de León",
-            desc: "Experimenta el cambio desde adentro...",
+            desc: "Experimenta el cambio desde adentro.🍄‍🟫La naturaleza siempre tiene las mejores soluciones, integra este poderoso hongo funcional en tu rutina diaria y cuéntanos los cambios.",
             price: 90000,
             image: "melena.jpg"
         },
         {
             id: 2,
             name: "Cordyceps",
-            desc: "Descubre los beneficios del hongo de la vitalidad...",
+            desc: "Descubre los beneficios del hongo de la vitalidad. El hongo de la salud integral. Este hongo sagrado potencia tu vitalidad, mejora tu rendimiento físico, refuerza tu sistema inmunológico y equilibra cuerpo y mente. Cuida de ti de manera natural.",
             price: 90000,
             image: "cordiceps.jpg"
         },
         {
             id: 3,
             name: "Psilocibes",
-            desc: "Lorem ipsum dolor sit amet...",
+            desc: "Las cápsulas de microdosis de psilocibina, ayudan a mejorar la claridad mental, el enfoque y la creatividad. Reducen el estrés y la ansiedad, elevan el estado de ánimo y favorecen la neuroplasticidad, facilitando cambios positivos. Son una herramienta natural para el bienestar sin efectos psicodélicos intensos.",
             price: 90000,
-            image: "gogfo.jpeg"
+            image: "psiloc.png"
         },
     ];
 
