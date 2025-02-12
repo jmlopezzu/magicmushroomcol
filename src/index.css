@@ -1,0 +1,25 @@
+/* En tu archivo tailwind.config.js o en un CSS global */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --light-tan: #F9F7F3;
+  --tan: #EFEAE1;
+  --brown: #6F5643;
+  --faded-brown: #88776A;
+  --brown-2: #8C6A4F;
+  --green: #6B8C42;
+}
+
+/* Aplicar la fuente a todo el proyecto */
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+/* O aplicar mediante clase de Tailwind */
+.josefin-sans {
+  font-family: 'Josefin Sans', sans-serif;
+}
