@@ -6,6 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 const Shop = () => {
     const { addItem, removeItem, items } = useCartStore();
     const [showCart, setShowCart] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState({});
     
     const chocolates = [
         {
@@ -13,24 +14,23 @@ const Shop = () => {
             name: "Melena de León",
             desc: "Experimenta el cambio desde adentro.🍄‍🟫La naturaleza siempre tiene las mejores soluciones, integra este poderoso hongo funcional en tu rutina diaria y cuéntanos los cambios.",
             price: 90000,
-            image: "melena.jpg"
+            images: ["melena3.jpg", "melena2.jpg", "melena.jpg"]
         },
         {
             id: 2,
             name: "Cordyceps",
             desc: "Descubre los beneficios del hongo de la vitalidad. El hongo de la salud integral. Este hongo sagrado potencia tu vitalidad, mejora tu rendimiento físico, refuerza tu sistema inmunológico y equilibra cuerpo y mente. Cuida de ti de manera natural.",
             price: 90000,
-            image: "cordiceps.jpg"
+            images: ["cordiceps2.jpeg", "cordiceps4.jpeg", "cordiceps.jpg"]
         },
         {
             id: 3,
             name: "Psilocibes",
             desc: "Las cápsulas de microdosis de psilocibina, ayudan a mejorar la claridad mental, el enfoque y la creatividad. Reducen el estrés y la ansiedad, elevan el estado de ánimo y favorecen la neuroplasticidad, facilitando cambios positivos. Son una herramienta natural para el bienestar sin efectos psicodélicos intensos.",
             price: 90000,
-            image: "psiloc.png"
+            images: ["psiloc3.png", "psiloc2.jpeg", "psiloc.png"]
         },
     ];
-
 
     const formatPrice = (price) => {
         return new Intl.NumberFormat('es-CO', {
@@ -103,16 +103,47 @@ const Shop = () => {
                             const itemQuantity = items.find(item => item.id === choco.id)?.quantity || 0;
                             
                             return (
-                                <div key={choco.id} className="bg-white rounded-xl overflow-hidden shadow-lg relative">
+                                <div key={choco.id} className="bg-white rounded-xl overflow-hidden shadow-lg relative hover:shadow-xl transition-shadow">
                                     {itemQuantity > 0 && (
                                         <div className="absolute top-2 right-2 bg-[var(--brown-2)] text-white px-3 py-1 rounded-full text-sm">
                                             {itemQuantity} en tu orden
                                         </div>
                                     )}
-                                    <img src={choco.image} alt={choco.name} className="w-full h-64 object-cover" />
-                                    <div className="p-6">
-                                        <h3 className="text-xl font-bold mb-2 text-[var(--brown-2)]">{choco.name}</h3>
-                                        <p className="text-[var(--faded-brown)] mb-4">{choco.desc}</p>
+                                    {/* Contenedor principal de la imagen */}
+                                    <div className="w-full">
+                                        <img 
+                                            src={choco.images[selectedImageIndex[choco.id] || 0]} 
+                                            alt={choco.name} 
+                                            className="w-full h-96 object-cover transition-opacity duration-300"
+                                        />
+                                    </div>
+                                    
+                                    {/* Miniaturas debajo de la imagen principal */}
+                                    <div className="flex gap-2 p-4 overflow-x-auto">
+                                        {choco.images.map((img, index) => (
+                                            <img
+                                                key={index}
+                                                src={img}
+                                                alt={`Vista ${index + 1}`}
+                                                className={`w-20 h-20 object-cover cursor-pointer rounded-lg border-2 ${
+                                                    (selectedImageIndex[choco.id] || 0) === index 
+                                                    ? 'border-[var(--brown-2)]' 
+                                                    : 'border-transparent'
+                                                }`}
+                                                onClick={() => setSelectedImageIndex(prev => ({
+                                                    ...prev,
+                                                    [choco.id]: index
+                                                }))}
+                                            />
+                                        ))}
+                                    </div>
+
+                                    {/* Contenido de la carta */}
+                                    <div className="p-6 flex flex-col justify-between">
+                                        <div>
+                                            <h3 className="text-xl font-bold mb-2 text-[var(--brown-2)]">{choco.name}</h3>
+                                            <p className="text-[var(--faded-brown)] line-clamp-4 mb-4">{choco.desc}</p>
+                                        </div>
                                         <div className="flex justify-between items-center">
                                             <span className="font-bold text-[var(--green)]">
                                                 {formatPrice(choco.price)}
