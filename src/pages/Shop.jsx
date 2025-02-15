@@ -28,7 +28,7 @@ const Shop = () => {
             name: "Psilocibes",
             desc: "Las cápsulas de microdosis de psilocibina, ayudan a mejorar la claridad mental, el enfoque y la creatividad. Reducen el estrés y la ansiedad, elevan el estado de ánimo y favorecen la neuroplasticidad, facilitando cambios positivos. Son una herramienta natural para el bienestar sin efectos psicodélicos intensos.",
             price: 90000,
-            images: ["psiloc3.png", "psiloc2.jpeg", "psiloc.png"]
+            images: ["psiloc3.png", "melena3.jpg", "psiloc.png"]
         },
     ];
 
